@@ -20,4 +20,6 @@ const productNumbers = (arr) => {
     })
 }
 
+// O(n²)
+
 console.log(productNumbers(integers));
