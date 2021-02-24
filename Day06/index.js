@@ -9,17 +9,23 @@
 class XORlinkedList {
     constructor(data, childOf) {
         this.data = data;
-        this.children = [];
+        this.both = [];
 
-        if(childOf instanceof XORlinkedList) childOf.add(this);
+        if(childOf instanceof XORlinkedList) {
+            if(childOf.both.length < 2) {
+                childOf.add(this);
+            } else {
+                throw new Error("Node fulfilled");
+            }
+        } 
     }
 
     add(element) { 
-        return this.children.push(element);
+        return this.both.push(element);
     }
 
     get(index) {
-        return this.children[index];
+        return this.both[index];
     }
 }
 
